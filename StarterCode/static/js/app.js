@@ -22,10 +22,7 @@ function updateTable(event) {
     console.log(shape);
 
     if (dateTime.length != 0) {filteredArray = filteredArray.filter(key => key.datetime === dateTime);}
-    console.log(filteredArray);
-    console.log(city.length);
     if (city.length != 0) {filteredArray = filteredArray.filter(key => key.city === city);}
-    console.log(filteredArray);
     if (state.length != 0) {filteredArray = filteredArray.filter(key => key.state === state);}
     if (country.length != 0) {filteredArray = filteredArray.filter(key => key.country === country);}
     if (shape.length != 0) {filteredArray = filteredArray.filter(key => key.shape === shape);}
