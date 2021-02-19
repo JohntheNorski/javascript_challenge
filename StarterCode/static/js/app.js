@@ -13,19 +13,22 @@ function updateTable(event) {
     let country = d3.select("#country").property("value");
     let shape = d3.select("#shape").property("value");
 
+    let filteredArray = tableData
+
     console.log(dateTime);
     console.log(city);
     console.log(state);
     console.log(country);
     console.log(shape);
 
-
-    let filteredArray = tableData.filter(
-        key => key.datetime === dateTime &&
-                key.city === city &&
-                key.state === state &&
-                key.country === country
-    );
+    if (dateTime.length != 0) {filteredArray = filteredArray.filter(key => key.datetime === dateTime);}
+    console.log(filteredArray);
+    console.log(city.length);
+    if (city.length != 0) {filteredArray = filteredArray.filter(key => key.city === city);}
+    console.log(filteredArray);
+    if (state.length != 0) {filteredArray = filteredArray.filter(key => key.state === state);}
+    if (country.length != 0) {filteredArray = filteredArray.filter(key => key.country === country);}
+    if (shape.length != 0) {filteredArray = filteredArray.filter(key => key.shape === shape);}
 
     console.log(filteredArray);
 
